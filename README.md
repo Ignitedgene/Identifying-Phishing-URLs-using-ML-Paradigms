@@ -15,12 +15,11 @@
   </ul>
 
 <h3> Problem Statement </h3> 
-  <p> Phishing is a form of fraud in which the attacker learns sensitive information such as login credentials or account information by sending as a reputable entity or person in email or other communication channels. URL phishing can lead to usernames, passwords, credit cards, and other personal information being stolen. In fact, the number of phishing scams in Singapore jumped from 16 cases in 2017 to 5,020 in 2022. In light of the growing concern towards phishing scams, our group aims to identify important features of phishing URLs and detect phishing URLs using Machine Learning techniques. 
+  <p> Phishing is a form of fraud in which the attacker learns sensitive information of users by sending as a reputable entity or person in email or other communication channels. URL phishing can lead to usernames, passwords, credit cards, and other personal information being stolen. In fact, the number of phishing scams in Singapore jumped from 16 cases in 2017 to 5,020 in 2022. In light of the growing concern, our group aims to identify important features of phishing URLs and detect phishing URLs using Machine Learning techniques. 
   </p>
 
 <h3> Data Preparation and Exploratory Data Analysis (EDA) </h3> 
-  <p> Firstly, we checked the distribution of our dataset and found that there was an equal number of non-phishing and phishing URLs of 5715. </p>
-  
+  <p> Firstly, we checked the distribution of our dataset and found that there was an equal number of non-phishing and phishing URLs of 5715. </p>  
 <h4> Exploratory Data Analysis (EDA) </h4>
   <p> Moving on to Data Cleaning, we removed irrelevant columns that does not contribute to phishing URLs. </p>
   
@@ -51,8 +50,8 @@
   <p> Below is the trained decision tree. </p>
   
 <h4> Improving the Decision Tree (DT) </h4>
-  <p> We aim to improve the accuracy of the decision tree by specifying 2 parameters: Criterion(Entropy or Gini) and max_depth. We can see that when a criterion is specified, the accuracy is increased. </p>
-  <p>Now, we check if pruning the tree using max_depth can lead to even better results. We run our model using different values for max_depth (from 1 to 30) and visualize its accuracy for each max_depth.  </p>
+  <p>We check if pruning the tree using 2 parameters: Criterion and max_depth, can lead to better accuracy. We run our model using different values for max_depth (from 1 to 30) and visualize its accuracy for each max_depth. </p>
+  
   <p> We deem the best parameters to be Criterion = XXX and Max_depth = XXX.</p>
 
 
@@ -110,7 +109,7 @@ From our RandomForestClassifier model, we performed Feature Selection to rank va
         </ul> 
         
 <h4> Ensembling ML models </h4>
-<p> We then sought to ensemble the 3 ML models using bagging method, where each model learns the error produced by the previous model using a slightly different subset of the training dataset. Bagging reduces variance and minimizes overfitting. </p>
+<p> We then seek to ensemble the 3 ML models using bagging method, where each model learns the error produced by the previous model using a slightly different subset of the training dataset. Bagging reduces variance and minimizes overfitting. </p>
 
 
 <h3> Presentation of Insights/ Recommendation </h3> 
