@@ -108,6 +108,11 @@ From our RandomForestClassifier model, we performed Feature Selection to rank va
   <li>Generally across all 3 models, the 2nd round of model training produced better model performances and prediction results</li>
   <li>Support Vector Machine model produced the best result.</li>
         </ul> 
+        
+<h4> Ensembling ML models </h4>
+<p> We then sought to ensemble the 3 ML models using bagging method, where each model learns the error produced by the previous model using a slightly different subset of the training dataset. Bagging reduces variance and minimizes overfitting. </p>
+
+
 <h3> Presentation of Insights/ Recommendation </h3> 
 
 <h3> Learning Outcome :D </h3> 
