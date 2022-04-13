@@ -9,7 +9,7 @@
     <li> Define Problem Statement </li> 
     <li> Data Preparation and Exploratory Data Analysis (EDA) </li> 
     <li> Machine Learning Model Training & Evaluation </li> 
-    <li>  Model Improvements - Feature Selection </li> 
+    <li> Model Improvements - Feature Selection </li> 
     <li> Presentation of Insights/ Recommendation </li> 
     <li> Learning Outcome :D </li> 
   </ul>
@@ -19,18 +19,16 @@
   </p>
 
 <h3> Data Preparation and Exploratory Data Analysis (EDA) </h3> 
-  <p> Firstly, we checked the distribution of our dataset and found that there was an equal number of non-phishing and phishing URLs of 5715. <p>
+  <p> Firstly, we checked the distribution of our dataset and found that there was an equal number of non-phishing and phishing URLs of 5715. </p>
   
-    <h4> Exploratory Data Analysis (EDA) </h4>
-      <p> Moving on to Data Cleaning, we removed irrelevant columns that does not contribute to phishing URLs. <p>
+<h4> Exploratory Data Analysis (EDA) </h4>
+  <p> Moving on to Data Cleaning, we removed irrelevant columns that does not contribute to phishing URLs. </p>
   
-    <h4> Principle Component Analysis (PCA) </h4>
-        <p> Upon analysing our datasets, we realized that the columns represented the clean breakdown of each aspect of URL. We realized that there was             a large dimension (87 columns) for the variables. Therefore, we sought to implement Principal Component Analysis (PCA) to reduce the                   dimensionality of the variables. We used a 95% explained variance for our PCA which reduces the dimensions to 60 components <p>
+<h4> Principle Component Analysis (PCA) </h4>
+  <p> Upon analysing our datasets, we realized that the columns represented the clean breakdown of each aspect of URL. We realized that there was             a large dimension (87 columns) for the variables. Therefore, we sought to implement Principal Component Analysis (PCA) to reduce the                   dimensionality of the variables. We used a 95% explained variance for our PCA which reduces the dimensions to 60 components. We plotted the explained variance plot below. </p>
        <ul> 
-        <li> Purpose of PCA: </li>
-          <p> Outputs variables ordered by greatest influence on our target variable, Phishing (1 or 0). <p>
+        <li> Purpose of PCA: Outputs variables ordered by greatest influence on our target variable, Phishing (1 or 0).  </li>
        </ul> 
-      <p> Upon analysing our datasets, we realized that the columns represented the clean breakdown of each aspect of URL. We realized that there was             a large dimension (87 columns) for the variables. Therefore, we sought to implement Principal Component Analysis (PCA) to reduce the                   dimensionality of the variables. We used a 95% explained variance for our PCA which reduces the dimensions to 60 components <p>
   
  
 <h3> Machine Learning Model Training & Evaluation </h3> 
@@ -44,18 +42,72 @@
   
   <p> During Model Building, we will be running 2 rounds with the following model inputs:
       <ol>
-        <li> PCA components (Top 15)</li>
-        <li> PCA components (Top 15)  + Variables with Feature Importance (Top 5)</li>
+        <li> PCA components (95% explained variance)</li>
+        <li> PCA components (95% explained variance)  + Variables with Feature Importance (TBC)</li>
       </ol>
  
-     <h4> Decision Tree (DT) </h4>
-     <h4>  Random Forest </h4>
-     <h4>Logistic Regression/ Support Vector Machine (SVM)</h4>
+<h4>1. Decision Tree (DT) </h4>
+  <p> We used trained test split, with a test size of 0.3. Afterwards, we trained the model using a max depth of 3, and plotted its confusion matrix. We evaluated the model's accuracy, precision and F1 score. </p>
+  <p> Below is the trained decision tree. </p>
+  
+<h4> Improving the Decision Tree (DT) </h4>
+  <p> We aim to improve the accuracy of the decision tree by specifying 2 parameters: Criterion(Entropy or Gini) and max_depth. We can see that when a criterion is specified, the accuracy is increased. </p>
+  <p>Now, we check if pruning the tree using max_depth can lead to even better results. We run our model using different values for max_depth (from 1 to 30) and visualize its accuracy for each max_depth.  </p>
+  <p> We deem the best parameters to be Criterion = XXX and Max_depth = XXX.</p>
+
+
+<h4>2. Random Forest </h4>
+
+
+<h4>3. Logistic Regression/ Support Vector Machine (SVM)</h4>
+  <p>We conducted Logistics Regression to model the probability of the discrete dependent variable (Phishing) based on the given variables. 
+        
+  <b>Limitations of Logistics Regression: </b>
+       <ul>
+            <li> Constructs linear boundaries, which may not be the case.</li>
+            <li> Assumes that independent variables are linearly related to dependent variables. </li>
+       </ul>
+        However, we realized that it resulted in poor classification accuracy and precision, and decided to try SVM to perform non-linear classification using kernel trick.
+       <ul> 
+  <li> <b>Purpose of Support Vector Machine (SVM): </b> Finds a hyperplane that best separates the two classes based on statistical approach. </li>
+       </ul> 
+  
+  </p>
+
 <h3> Model Improvements - Feature Selection </h3> 
+    <p>
+       <ul> 
+<li>We achieved good results from using PCA components as our model inputs, but there was still inaccuracies in the model's performance.</li>
+<li>We noticed that certain variables (i.e. google_index, page_rank) were correlated to phishing emails, therefore we sought to use Feature Selection from our original dataset and include them into our model inputs.</li>
+      </ul> 
+    
+From our RandomForestClassifier model, we performed Feature Selection to rank variables based on feature importance, and we decided to add the top 5 features into our model inputs. We hypothesized that by adding these weights, we could achieve a better overall prediction accuracy and precision.        </p>
+    <p>This is a horizontal barchart of the top features </p>
+      
+<h4> Exploratory Data Analysis for Feature Importance </h4> 
+  <p>Looking at the chart for Feature Importance, we conducted EDA on the top 8 variables (Highest Influence on target variable). </p>
+  
+  <p> The violin plots of top 8 variables are as shown. (TBC) </p>
+  
+<h3> Round 2 </h3>
+
+  <p>For our second model building, we included the variables from Feature Selection to test if we can obtain a better performance for our models. </p>      
+<h4>1. Decision Tree (DT) </h4>
+<h4>2. Random Forest </h4>
+<h4>3. Logistic Regression/ Support Vector Machine (SVM) </h4>
 
 <h3> Model Improvements - Ensembling </h3>
   <p> We also decided to conduct ensembling across the 3 different models to obtain better prediction and performance. </p> 
-
+<h4> Model Consolidation & Comparison</h4> 
+  <p>After running both rounds of model training for all 3 models, we consolidated the metrics into a dataframe for analysis.  
+  
+  <b>Deductions from consolidating results:</b>
+  </p> 
+  
+  <ul> 
+  <li>Generally across all 3 models, the 2nd round of model training produced better model performances and prediction results</li>
+  <li>Support Vector Machine model produced the best result.</li>
+        </ul> 
 <h3> Presentation of Insights/ Recommendation </h3> 
 
 <h3> Learning Outcome :D </h3> 
