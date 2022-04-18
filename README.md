@@ -113,22 +113,29 @@
     
 ### 4.1. Decision Tree (DT)
   <b> - Model Evaluations </b> 
+  <div>
+    <img width="400" height="200" src="/dsai images/dt_2.jpg">  
+    <img width="300" height="200" src="/dsai images/dt_2_cm.jpg">
+  </div> 
   
-   < insert diagram >   
 ### 4.2. Random Forest 
   <b> - Model Evaluations </b> 
+  <div>
+    <img width="400" height="200" src="/dsai images/rfc_2.jpg">  
+    <img width="300" height="200" src="/dsai images/rfc_2_cm.jpg">
+  </div>  
   
-   < insert diagram >   
 ### 4.3. Logistic Regression
   <b> - Model Evaluations </b> 
-  
-   < insert diagram >   
+   <div>
+    <img width="400" height="200" src="/dsai images/lr_2.jpg">  
+    <img width="300" height="200" src="/dsai images/lr_2_cm.jpg">
+  </div>   
 
 ## 5. Model Comparison 
-  <p align='justify'> After running both rounds of model training for all 3 models, we consolidated our metrics into a dataframe for analysis.</p> 
-    
-    <b> Deductions from consolidating results:</b>
-
+  <p align='justify'> After running both rounds of model training for all 3 models, we consolidated our metrics into a dataframe for analysis. Our results are as follows: </p> 
+  <img src="/dsai images/consolidated_metrics.jpg">
+  <b> Analysis of Model Comparison </b> 
     <ul> 
   <li> Generally across all 3 models, the 2nd round of model training produced better model performances and prediction results</li>
   <li> RandomForestClassifier returned the best classification results. </li>
