@@ -35,7 +35,7 @@
 > Purpose of PCA: Outputs variables ordered by greatest influence on our target variable, Phishing (1 or 0). 
 
   <div> 
-    <img width="600" height="350" src="/dsai images/pca.jpg">
+    <img width="800" height="350" src="/dsai images/pca.jpg">
   </div> 
   
 ## 3. Machine Learning Model Training & Evaluation 
@@ -174,7 +174,7 @@
   
   <b> - Model Evaluations </b> 
   <div>
-    <img width="600" height="125" src="/dsai images/ensembling_results.jpg">
+    <img width="650" height="100" src="/dsai images/ensembling_results.jpg">
   </div> 
   
 ## 7. Presentation of Insights/ Recommendation 
