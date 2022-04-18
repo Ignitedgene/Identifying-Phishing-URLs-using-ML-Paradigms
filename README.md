@@ -178,7 +178,7 @@
   </div> 
   
 ## 7. Presentation of Insights/ Recommendation 
-  <p align='justify'> We managed to build a model with 95.48% classification accuracy through ensembling of the 3 given models. </p> 
+  <p align='justify'> We managed to build a model with 95.28% classification accuracy through ensembling of the 3 given models. </p> 
 
 ## 8. Learning Outcome :D 
   <p align='justify'> Through this mini-project, we gained the following learning outcomes: </p>
