@@ -16,115 +16,122 @@
     <li> Learning Outcome :D </li> 
   </ol>
 
-<h3> 1. Problem Statement </h3> 
+## 1. Problem Statement 
   <p align='justify'>  Phishing is a form of fraud in which the attacker learns sensitive information of users by sending as a reputable entity or person in email or other communication channels. URL phishing can lead to usernames, passwords, credit cards, and other personal information being stolen. In fact, the number of phishing scams in Singapore jumped from 16 cases in 2017 to 5,020 in 2022. In light of the growing concern, our group aims to identify important features of phishing URLs and detect phishing URLs using Machine Learning techniques. 
   </p>
 
---- 
-
-<h3> 2. Data Preparation and Exploratory Data Analysis (EDA) </h3> 
-<h4> Data Visualisation & Preparation </h4> 
+## 2. Data Preparation and Exploratory Data Analysis (EDA)
   <p align='justify'> Firstly, we checked the distribution of our dataset and found that there was an equal number of non-phishing and phishing URLs of 5715. We also noticed that there were certain columns with NaN values for phishing URLs, and we deemed these columns as irrelevant. We then removed  these relevant columns which does not contribute to phishing URLs. </p>
+
+> Purpose of Data Preparation: Removing columns which do not contribute to Phishing URLs (Irrelevant)
 
 < insert heatmap & cols with 0 >
 
-> Purpose of Data Preparation: Removing columns which do not contribute to Phishing URLs (Irrelevant)
-    
 <h4> Principle Component Analysis (PCA) </h4>
   <p align='justify'>  Upon analysing our datasets, we realized that the columns represented the clean breakdown of each aspect of URL. We realized that there was a large dimension (87 columns) for the variables. Therefore, we sought to implement Principal Component Analysis (PCA) to reduce the dimensionality of the variables. We used a 95% explained variance for our PCA which reduces the dimensions to 60 components. We plotted the explained variance plot below. </p>
 
 > Purpose of PCA: Outputs variables ordered by greatest influence on our target variable, Phishing (1 or 0). 
 
---- 
-
-<h3> 3. Machine Learning Model Training & Evaluation </h3> 
+## 3. Machine Learning Model Training & Evaluation 
   <p> We decided to run the following ML models and evaluate their respective performances:
       <ul> 
-        <li> Decision Tree </li>
-        <li> Random Forest </li>
-        <li> Logistic Regression </li> 
+        <li> Decision Tree Classifier </li>
+        <li> Random Forest Classifier </li>
+        <li> Logistic Regression Classifier </li> 
       </ul>
   </p> 
   
   <p> During Model Building, we will be running 2 rounds with the following model inputs:
       <ol>
-        <li> PCA components (95% explained variance)</li>
+        <li> PCA components (95% explained variance) </li>
         <li> PCA components (95% explained variance)  + Selected variables from Feature Selection </li>
       </ol>
 
-<h4> <b> 1. Decision Tree (DT) </b> </h4>
+## Round 1
+
+### 1. Decision Tree Classifier  
   <p align='justify'> We used trained test split, with a test size of 0.3. Afterwards, we trained the model using a max depth of 3, and plotted its confusion matrix. We evaluated the model's accuracy, precision and F1 score. </p>
-  <p> Below is the trained decision tree. </p>
+ 
+  <b> - Decision Tree Diagram </b> 
   
-<h4> Improving the Decision Tree (DT) </h4>
+  insert diagram
+  
+  <b> - Model Evaluations </b> 
+  
+  insert diagram
+  
+### - Improving the Decision Tree (DT) 
   <p align='justify'> We check if pruning the tree using 2 parameters: Criterion and max_depth, can lead to better accuracy. We run our model using different values for max_depth (from 1 to 30) and visualize its accuracy for each max_depth. </p>
   
-  <p> We deem the best parameters to be Criterion = entropy and Max_depth = 7.</p>
+> We deem the best parameters to be Criterion = entropy and Max_depth = 7.
 
-< insert graph >
+  < insert graph >
 
-<h4>2. Random Forest </h4>
-  <p align='justify'> However, we realised that DecisionTreeClassifier has limited ability to classify the data, therefore we used RandomForestClassifer which ensembles the majority votes of a multitude of Decision Trees to improve model performance and robustness. 
+### 2. Random Forest Classifier
+  <p align='justify'> However, we realised that DecisionTreeClassifier has poor classification accuracy and high False Negative results, therefore we applied RandomForestClassifer which ensembles the majority votes of a multitude of Decision Trees to improve model performance and robustness. </p>
+ 
+  <b> - Model Evaluations </b> 
   
-<h4>3. Logistic Regression/ Support Vector Machine (SVM)</h4>
-  <p align='justify'> We conducted Logistics Regression to model the probability of the discrete dependent variable (Phishing) based on the given variables. 
+   < insert diagram > 
+     
+### 3. Logistic Regression Classifier
+  <p align='justify'> We conducted Logistics Regression to model the probability of the discrete dependent variable (Phishing) based on the given variables. Logistic Regression assumes a linear relationship between dependent and independent variables, and constructs linear boundaries within the dataset to segment the data. </p>
         
----
+  <b> - Model Evaluations </b> 
   
-<h3> 4. Model Improvements - Feature Selection & Hyperparameter Tuning </h3> 
+   < insert diagram >      
+     
+## 4. Model Improvements - Feature Selection & Hyperparameter Tuning 
   <p align='justify'>
     <ul> 
-      <li>We achieved good results from using PCA components as our model inputs, but there was still inaccuracies in the model's performance.</li>
-      <li>We noticed that certain variables (i.e. google_index, page_rank) were correlated to phishing emails, therefore we sought to use Feature Selection from our original dataset and include them into our model inputs.</li>
+      <li> We achieved good results from using PCA components as our model inputs, but there was still inaccuracies in the model's performance.</li>
+      <li> We noticed that certain variables (i.e. google_index, page_rank) were correlated to phishing emails, therefore we sought to use Feature Selection from our original dataset and include them into our model inputs. </li>
     </ul> 
     
-<p align='justify'> From our RandomForestClassifier model, we performed Feature Selection to rank variables based on feature importance, and we decided to add the top 5 features into our model inputs. We hypothesized that by adding these weights, we could achieve a better overall prediction accuracy and precision.        </p>
+  <p align='justify'> From our RandomForestClassifier model, we performed Feature Selection to rank variables based on feature importance, and we decided to add the top 5 features into our model inputs. We hypothesized that by adding these weights, we could achieve a better overall prediction accuracy and precision. </p>
     <p>This is a horizontal barchart of the top features </p>
-      
-<h4> Exploratory Data Analysis for Feature Importance </h4> 
+
+
+### Exploratory Data Analysis for Feature Importance 
   <p>Looking at the chart for Feature Importance, we conducted EDA on the top 8 variables (Highest Influence on target variable). </p>
   
   <p> The violin plots of top 8 variables are as shown. (TBC) </p>
   
-<h3> Round 2 </h3>
+### Round 2
 
-  <p>For our second model building, we included the variables from Feature Selection to test if we can obtain a better performance for our models. </p>      
-<h4>1. Decision Tree (DT) </h4>
-<h4>2. Random Forest </h4>
-<h4>3. Logistic Regression</h4>
+  <p align='justify'> For our second model building, we included the variables from Feature Selection to test if we can obtain a better performance for our models.   
+    </p>      
+### 1. Decision Tree (DT)
+### 2. Random Forest 
+### 3. Logistic Regression
 
----
-
-<h3> 5. Model Comparison </h3>
-
-
----
-
-<h3> 6. Model Improvements - Ensembling </h3>
-  <p> We also decided to conduct ensembling across the 3 different models to obtain better prediction and performance. </p> 
-<h4> Model Consolidation & Comparison</h4> 
-  <p>After running both rounds of model training for all 3 models, we consolidated the metrics into a dataframe for analysis.  
+## 5. Model Comparison 
+  <p align='justify'> After running both rounds of model training for all 3 models, we consolidated our metrics into a dataframe for analysis.  
   
-  <b>Deductions from consolidating results:</b>
+    <b>Deductions from consolidating results:</b>
   </p> 
   
   <ul> 
   <li>Generally across all 3 models, the 2nd round of model training produced better model performances and prediction results</li>
   <li>Support Vector Machine model produced the best result.</li>
         </ul> 
+
+## 6. Model Improvements - Ensembling
+  <p align='justify'> We also decided to conduct ensembling across the 3 different models to obtain better prediction and performance. </p> 
+
         
-<h4> Ensembling ML models </h4>
+### Ensembling ML models </h4>
 <p> We then seek to ensemble the 3 ML models using bagging method, where each model learns the error produced by the previous model using a slightly different subset of the training dataset. Bagging reduces variance and minimizes overfitting. </p>
 
 --- 
 
-<h3> 7. Presentation of Insights/ Recommendation </h3> 
+## 7. Presentation of Insights/ Recommendation 
 
-<h3> 8. Learning Outcome :D </h3> 
+## 8. Learning Outcome :D 
 
-<h2> THANK YOU! </h2> 
+<h2> THANK YOU! </h2>
 
-<h2> References: </h2> 
+# References: 
 <ol> 
   <li> Phishing scams in Singapore rose to 5,020 cases in 2021 from 16 in 2017, https://sg.news.yahoo.com/phishing-scams-singapore-5020-cases-2021-from-16-in-2017-desmond-tan-084615863.html </li>
 </ol>
