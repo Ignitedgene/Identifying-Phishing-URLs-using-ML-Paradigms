@@ -51,8 +51,8 @@
         <li> PCA components (95% explained variance)</li>
         <li> PCA components (95% explained variance)  + Selected variables from Feature Selection </li>
       </ol>
- 
-<h4>1. Decision Tree (DT) </h4>
+
+<h4> <b> 1. Decision Tree (DT) </b> </h4>
   <p align='justify'> We used trained test split, with a test size of 0.3. Afterwards, we trained the model using a max depth of 3, and plotted its confusion matrix. We evaluated the model's accuracy, precision and F1 score. </p>
   <p> Below is the trained decision tree. </p>
   
@@ -71,7 +71,7 @@
         
 ---
   
-<h3> 4. Model Improvements - Feature Selection & GridSearchCV </h3> 
+<h3> 4. Model Improvements - Feature Selection & Hyperparameter Tuning </h3> 
   <p align='justify'>
     <ul> 
       <li>We achieved good results from using PCA components as our model inputs, but there was still inaccuracies in the model's performance.</li>
@@ -95,7 +95,12 @@
 
 ---
 
-<h3> 5. Model Improvements - Ensembling </h3>
+<h3> 5. Model Comparison </h3>
+
+
+---
+
+<h3> 6. Model Improvements - Ensembling </h3>
   <p> We also decided to conduct ensembling across the 3 different models to obtain better prediction and performance. </p> 
 <h4> Model Consolidation & Comparison</h4> 
   <p>After running both rounds of model training for all 3 models, we consolidated the metrics into a dataframe for analysis.  
@@ -111,10 +116,11 @@
 <h4> Ensembling ML models </h4>
 <p> We then seek to ensemble the 3 ML models using bagging method, where each model learns the error produced by the previous model using a slightly different subset of the training dataset. Bagging reduces variance and minimizes overfitting. </p>
 
+--- 
 
-<h3> Presentation of Insights/ Recommendation </h3> 
+<h3> 7. Presentation of Insights/ Recommendation </h3> 
 
-<h3> Learning Outcome :D </h3> 
+<h3> 8. Learning Outcome :D </h3> 
 
 <h2> THANK YOU! </h2> 
 
