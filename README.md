@@ -82,52 +82,74 @@
    < insert diagram >      
      
 ## 4. Model Improvements - Feature Selection & Hyperparameter Tuning 
+
+### Feature Selection
   <p align='justify'>
     <ul> 
       <li> We achieved good results from using PCA components as our model inputs, but there was still inaccuracies in the model's performance.</li>
       <li> We noticed that certain variables (i.e. google_index, page_rank) were correlated to phishing emails, therefore we sought to use Feature Selection from our original dataset and include them into our model inputs. </li>
     </ul> 
     
-  <p align='justify'> From our RandomForestClassifier model, we performed Feature Selection to rank variables based on feature importance, and we decided to add the top 5 features into our model inputs. We hypothesized that by adding these weights, we could achieve a better overall prediction accuracy and precision. </p>
+  <p align='justify'> From our RandomForestClassifier model, we performed Feature Selection to rank variables based on feature importance, and add the most influential variables to our model inputs. We hypothesized that by adding these weights, we could achieve a better overall prediction accuracy and precision. </p>
+  
     <p>This is a horizontal barchart of the top features </p>
 
-
-### Exploratory Data Analysis for Feature Importance 
-  <p>Looking at the chart for Feature Importance, we conducted EDA on the top 8 variables (Highest Influence on target variable). </p>
+  <b> - Exploratory Data Analysis for Feature Importance </b> 
+    <ul> 
+      <li> Analysing the chart for Feature Importance, we conducted EDA on the top 10 variables (Highest Influence on target variable). </li>
+      <li> Features like web_traffic & ratioexthyperlinks do not have a distinct difference to effectively identify phishing URLs, therefore we exclude them from our model inputs. </li>
+    </ul> 
   
-  <p> The violin plots of top 8 variables are as shown. (TBC) </p>
+  <b> - Violin plots of top 10 variables </b>
   
-### Round 2
-
-  <p align='justify'> For our second model building, we included the variables from Feature Selection to test if we can obtain a better performance for our models.   
+### Hyperparameter Tuning - GridSearchCV
+  <p align='justify'> We realized that we can tune the hyperparameters of the model to achieve a higher result, therefore we used GridSearchCV which optimizes the parameters for the highest classification accuracy. </p> 
+  
+> Purpose of GridSearchCV: Tests all possible parameter combinations and returns the best set of parameters using cross-validation method.
+    
+## Round 2
+  <p align='justify'> For our second model building, we included the selected variables from Feature Selection to the same dataset to test if we can obtain a better performance for our models.   
     </p>      
+    
 ### 1. Decision Tree (DT)
+  <b> - Model Evaluations </b> 
+  
+   < insert diagram >   
 ### 2. Random Forest 
+  <b> - Model Evaluations </b> 
+  
+   < insert diagram >   
 ### 3. Logistic Regression
+  <b> - Model Evaluations </b> 
+  
+   < insert diagram >   
 
 ## 5. Model Comparison 
-  <p align='justify'> After running both rounds of model training for all 3 models, we consolidated our metrics into a dataframe for analysis.  
-  
-    <b>Deductions from consolidating results:</b>
-  </p> 
-  
-  <ul> 
-  <li>Generally across all 3 models, the 2nd round of model training produced better model performances and prediction results</li>
-  <li>Support Vector Machine model produced the best result.</li>
-        </ul> 
+  <p align='justify'> After running both rounds of model training for all 3 models, we consolidated our metrics into a dataframe for analysis.</p> 
+    
+    <b> Deductions from consolidating results:</b>
+
+    <ul> 
+  <li> Generally across all 3 models, the 2nd round of model training produced better model performances and prediction results</li>
+  <li> RandomForestClassifier returned the best classification results. </li>
+    </ul> 
 
 ## 6. Model Improvements - Ensembling
-  <p align='justify'> We also decided to conduct ensembling across the 3 different models to obtain better prediction and performance. </p> 
-
-        
-### Ensembling ML models </h4>
-<p> We then seek to ensemble the 3 ML models using bagging method, where each model learns the error produced by the previous model using a slightly different subset of the training dataset. Bagging reduces variance and minimizes overfitting. </p>
-
---- 
+  <p align='justify'> We also decided to conduct ensembling across the 3 different models using hard voting method, which sums the votes for the class labels from each of the model and predicts the class with the most votes. We also included the results from hyperparameter tuning to improve model performance. </p> 
+  
+  <b> - Model Evaluations </b> 
+  
+   < insert diagram >
 
 ## 7. Presentation of Insights/ Recommendation 
+  <p align='justify'> We managed to build a model with 95.48% classification accuracy through ensembling of the 3 given models.
 
 ## 8. Learning Outcome :D 
+  <p align='justify'> Through this mini-project, we gained the following learning outcomes: </p>
+  <ul> 
+    <li> Using PCA to reduce the dimensionality of the dataset and tackle the curse of dimensionality</li>    
+    <li> Hyperparameter tuning using GridSearchCV </li>
+    <li> Ensembling of different models to obtain the aggregated result to improve model performance. </li>   
 
 <h2> THANK YOU! </h2>
 
