@@ -11,7 +11,7 @@
     <li> Machine Learning Model Training & Evaluation </li> 
     <li> Model Improvements - Feature Selection & Hyperparameter Tuning </li> 
     <li> Model Comparison </li>
-    <li> Model Ensembling </li>
+    <li> Model Improvements - Ensembling </li>
     <li> Presentation of Insights/ Recommendation </li> 
     <li> Learning Outcome :D </li> 
   </ol>
@@ -49,7 +49,7 @@
 
 ## Round 1
 
-### 1. Decision Tree Classifier  
+### 3.1. Decision Tree Classifier  
   <p align='justify'> We used trained test split, with a test size of 0.3. Afterwards, we trained the model using a max depth of 3, and plotted its confusion matrix. We evaluated the model's accuracy, precision and F1 score. </p>
  
   <b> - Decision Tree Diagram </b> 
@@ -67,14 +67,14 @@
 
   < insert graph >
 
-### 2. Random Forest Classifier
+### 3.2. Random Forest Classifier
   <p align='justify'> However, we realised that DecisionTreeClassifier has poor classification accuracy and high False Negative results, therefore we applied RandomForestClassifer which ensembles the majority votes of a multitude of Decision Trees to improve model performance and robustness. </p>
  
   <b> - Model Evaluations </b> 
   
    < insert diagram > 
      
-### 3. Logistic Regression Classifier
+### 3.3. Logistic Regression Classifier
   <p align='justify'> We conducted Logistics Regression to model the probability of the discrete dependent variable (Phishing) based on the given variables. Logistic Regression assumes a linear relationship between dependent and independent variables, and constructs linear boundaries within the dataset to segment the data. </p>
         
   <b> - Model Evaluations </b> 
@@ -111,15 +111,15 @@
   <p align='justify'> For our second model building, we included the selected variables from Feature Selection to the same dataset to test if we can obtain a better performance for our models.   
     </p>      
     
-### 1. Decision Tree (DT)
+### 4.1. Decision Tree (DT)
   <b> - Model Evaluations </b> 
   
    < insert diagram >   
-### 2. Random Forest 
+### 4.2. Random Forest 
   <b> - Model Evaluations </b> 
   
    < insert diagram >   
-### 3. Logistic Regression
+### 4.3. Logistic Regression
   <b> - Model Evaluations </b> 
   
    < insert diagram >   
@@ -142,7 +142,7 @@
    < insert diagram >
 
 ## 7. Presentation of Insights/ Recommendation 
-  <p align='justify'> We managed to build a model with 95.48% classification accuracy through ensembling of the 3 given models.
+  <p align='justify'> We managed to build a model with 95.48% classification accuracy through ensembling of the 3 given models. </p> 
 
 ## 8. Learning Outcome :D 
   <p align='justify'> Through this mini-project, we gained the following learning outcomes: </p>
@@ -150,10 +150,11 @@
     <li> Using PCA to reduce the dimensionality of the dataset and tackle the curse of dimensionality</li>    
     <li> Hyperparameter tuning using GridSearchCV </li>
     <li> Ensembling of different models to obtain the aggregated result to improve model performance. </li>   
-
+   </ul>
+   
 <h2> THANK YOU! </h2>
 
-# References: 
+## References: 
 <ol> 
   <li> Phishing scams in Singapore rose to 5,020 cases in 2021 from 16 in 2017, https://sg.news.yahoo.com/phishing-scams-singapore-5020-cases-2021-from-16-in-2017-desmond-tan-084615863.html </li>
 </ol>
