@@ -24,14 +24,20 @@
   <p align='justify'> Firstly, we checked the distribution of our dataset and found that there was an equal number of non-phishing and phishing URLs of 5715. We also noticed that there were certain columns with NaN values for phishing URLs, and we deemed these columns as irrelevant. We then removed  these relevant columns which does not contribute to phishing URLs. </p>
 
 > Purpose of Data Preparation: Removing columns which do not contribute to Phishing URLs (Irrelevant)
-
-< insert heatmap & cols with 0 >
-
+  <div> 
+    <img width="600" height="700" src="/dsai images/Null_values.jpg"> 
+    <img width="150" height="100" align = 'top' src="/dsai images/null_cols.jpg">
+  </div>
+  
 <h4> Principle Component Analysis (PCA) </h4>
   <p align='justify'>  Upon analysing our datasets, we realized that the columns represented the clean breakdown of each aspect of URL. We realized that there was a large dimension (87 columns) for the variables. Therefore, we sought to implement Principal Component Analysis (PCA) to reduce the dimensionality of the variables. We used a 95% explained variance for our PCA which reduces the dimensions to 60 components. We plotted the explained variance plot below. </p>
 
 > Purpose of PCA: Outputs variables ordered by greatest influence on our target variable, Phishing (1 or 0). 
 
+  <div> 
+    <img width="600" height="350" src="/dsai images/pca.jpg">
+  </div> 
+  
 ## 3. Machine Learning Model Training & Evaluation 
   <p> We decided to run the following ML models and evaluate their respective performances:
       <ul> 
@@ -53,34 +59,42 @@
   <p align='justify'> We used trained test split, with a test size of 0.3. Afterwards, we trained the model using a max depth of 3, and plotted its confusion matrix. We evaluated the model's accuracy, precision and F1 score. </p>
  
   <b> - Decision Tree Diagram </b> 
-  
-  insert diagram
+  <div>
+    <img width="650" height="400" src="/dsai images/dt_tree.jpg">
+  </div> 
   
   <b> - Model Evaluations </b> 
-  
-  insert diagram
+  <div>  
+    <img width="350" height="200" src="/dsai images/dt_1.jpg">
+    <img width="300" height="200" src="/dsai images/dt_1_cm.jpg">
+  </div> 
   
 ### - Improving the Decision Tree (DT) 
   <p align='justify'> We check if pruning the tree using 2 parameters: Criterion and max_depth, can lead to better accuracy. We run our model using different values for max_depth (from 1 to 30) and visualize its accuracy for each max_depth. </p>
   
 > We deem the best parameters to be Criterion = entropy and Max_depth = 7.
-
-  < insert graph >
-
+  <div>
+    <img width="450" height="300" src="/dsai images/gini_entropy.jpg">
+  </div>
+  
 ### 3.2. Random Forest Classifier
   <p align='justify'> However, we realised that DecisionTreeClassifier has poor classification accuracy and high False Negative results, therefore we applied RandomForestClassifer which ensembles the majority votes of a multitude of Decision Trees to improve model performance and robustness. </p>
  
   <b> - Model Evaluations </b> 
+  <div>
+    <img width="350" height="200" src="/dsai images/rfc_1.jpg">
+    <img width="300" height="200" src="/dsai images/rfc_1_cm.jpg">
+  </div>
   
-   < insert diagram > 
-     
 ### 3.3. Logistic Regression Classifier
   <p align='justify'> We conducted Logistics Regression to model the probability of the discrete dependent variable (Phishing) based on the given variables. Logistic Regression assumes a linear relationship between dependent and independent variables, and constructs linear boundaries within the dataset to segment the data. </p>
         
   <b> - Model Evaluations </b> 
+  <div>
+    <img width="350" height="200" src="/dsai images/dt_1.jpg">
+    <img width="300" height="200" src="/dsai images/dt_1_cm.jpg">
+  </div> 
   
-   < insert diagram >      
-     
 ## 4. Model Improvements - Feature Selection & Hyperparameter Tuning 
 
 ### Feature Selection
@@ -92,7 +106,10 @@
     
   <p align='justify'> From our RandomForestClassifier model, we performed Feature Selection to rank variables based on feature importance, and add the most influential variables to our model inputs. We hypothesized that by adding these weights, we could achieve a better overall prediction accuracy and precision. </p>
   
-    <p>This is a horizontal barchart of the top features </p>
+  <p>This is a horizontal barchart of the top features </p> 
+  <div>
+    <img width="700" height="470" src="/dsai images/feature_importance.jpg">
+  </div>
 
   <b> - Exploratory Data Analysis for Feature Importance </b> 
     <ul> 
@@ -101,12 +118,19 @@
     </ul> 
   
   <b> - Violin plots of top 10 variables </b>
+  <div>
+    <img width="700" height=400" src="/dsai images/violin_plot.jpg">
+  </div> 
   
 ### Hyperparameter Tuning - GridSearchCV
   <p align='justify'> We realized that we can tune the hyperparameters of the model to achieve a higher result, therefore we used GridSearchCV which optimizes the parameters for the highest classification accuracy. </p> 
   
 > Purpose of GridSearchCV: Tests all possible parameter combinations and returns the best set of parameters using cross-validation method.
     
+  <div>
+    <img width="450" height=50" src="/dsai images/gridsearchcv.jpg">
+  </div>                                                           
+                                                                 
 ## Round 2
   <p align='justify'> For our second model building, we included the selected variables from Feature Selection to the same dataset to test if we can obtain a better performance for our models.   
     </p>      
@@ -114,27 +138,31 @@
 ### 4.1. Decision Tree (DT)
   <b> - Model Evaluations </b> 
   <div>
-    <img width="400" height="200" src="/dsai images/dt_2.jpg">  
+    <img width="350" height="200" src="/dsai images/dt_2.jpg">  
     <img width="300" height="200" src="/dsai images/dt_2_cm.jpg">
   </div> 
   
 ### 4.2. Random Forest 
   <b> - Model Evaluations </b> 
   <div>
-    <img width="400" height="200" src="/dsai images/rfc_2.jpg">  
+    <img width="350" height="200" src="/dsai images/rfc_2.jpg">  
     <img width="300" height="200" src="/dsai images/rfc_2_cm.jpg">
   </div>  
   
 ### 4.3. Logistic Regression
   <b> - Model Evaluations </b> 
    <div>
-    <img width="400" height="200" src="/dsai images/lr_2.jpg">  
+    <img width="350" height="200" src="/dsai images/lr_2.jpg">  
     <img width="300" height="200" src="/dsai images/lr_2_cm.jpg">
   </div>   
 
 ## 5. Model Comparison 
   <p align='justify'> After running both rounds of model training for all 3 models, we consolidated our metrics into a dataframe for analysis. Our results are as follows: </p> 
-  <img src="/dsai images/consolidated_metrics.jpg">
+  
+   <div>
+    <img width="600" height="250" src="/dsai images/consolidated_metrics.jpg">  
+  </div> 
+  
   <b> Analysis of Model Comparison </b> 
     <ul> 
   <li> Generally across all 3 models, the 2nd round of model training produced better model performances and prediction results</li>
@@ -145,9 +173,10 @@
   <p align='justify'> We also decided to conduct ensembling across the 3 different models using hard voting method, which sums the votes for the class labels from each of the model and predicts the class with the most votes. We also included the results from hyperparameter tuning to improve model performance. </p> 
   
   <b> - Model Evaluations </b> 
+  <div>
+    <img width="600" height="125" src="/dsai images/ensembling_results.jpg">
+  </div> 
   
-   < insert diagram >
-
 ## 7. Presentation of Insights/ Recommendation 
   <p align='justify'> We managed to build a model with 95.48% classification accuracy through ensembling of the 3 given models. </p> 
 
