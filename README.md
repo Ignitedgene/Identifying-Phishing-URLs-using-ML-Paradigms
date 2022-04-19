@@ -178,8 +178,21 @@
   </div> 
   
 ## 7. Presentation of Insights/ Recommendation 
-  <p align='justify'> We managed to build a model with 95.28% classification accuracy through ensembling of the 3 given models. </p> 
-
+  <ul>
+    <li> We managed to build a model with 95.28% classification accuracy through ensembling of the 3 given models. </li> 
+    <li> We also noticed the following patterns for phishing URLs: </li>
+      <ol> 
+        <li> Indexed by google (google_rank = 1) </li> 
+        <li> No hyperlinks (nb_hyperlinks = 0) </li> 
+        <li> No "www" within URL (nb_www = 0) </li> 
+        <li> Zero or low page rank </li> 
+        <li> Relatively new domain_age </li> 
+        <li> Presence of phish hints </li> 
+      </ol> 
+  <div>
+    <img width="700" height=400" src="/dsai images/violin_plot.jpg">
+  </div> 
+                                                                   
 ## 8. Learning Outcome :D 
   <p align='justify'> Through this mini-project, we gained the following learning outcomes: </p>
   <ul> 
