@@ -179,7 +179,7 @@
   
 ## 7. Presentation of Insights/ Recommendation 
   <ul>
-    <li> We managed to build a model with 95.28% classification accuracy through ensembling of the 3 given models. </li> 
+    <li> We managed to build a model with <b> 95.28% classification accuracy </b> through ensembling of the 3 given models. </li> 
     <li> We also noticed the following patterns for phishing URLs: </li>
       <ol> 
         <li> Indexed by google (google_rank = 1) </li> 
