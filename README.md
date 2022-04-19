@@ -25,8 +25,8 @@
 
 > Purpose of Data Preparation: Removing columns which do not contribute to Phishing URLs (Irrelevant)
   <div> 
-    <img width="600" height="700" src="/dsai images/Null_values.jpg"> 
-    <img width="250" height="150" align = 'top' src="/dsai images/null_cols.jpg">
+    <img width="500" height="600" src="/dsai images/Null_values.jpg"> 
+    <img width="225" height="125" align = 'top' src="/dsai images/null_cols.jpg">
   </div>
   
 <h4> Principle Component Analysis (PCA) </h4>
@@ -160,7 +160,7 @@
   <p align='justify'> After running both rounds of model training for all 3 models, we consolidated our metrics into a dataframe for analysis. Our results are as follows: </p> 
   
    <div>
-    <img width="600" height="200" src="/dsai images/consolidated_metrics.jpg">  
+    <img width="600" height="160" src="/dsai images/consolidated_metrics.jpg">  
   </div> 
   
   <b> Analysis of Model Comparison </b> 
@@ -174,7 +174,7 @@
   
   <b> - Model Evaluations </b> 
   <div>
-    <img width="650" height="100" src="/dsai images/ensembling_results.jpg">
+    <img width="550" height="100" src="/dsai images/ensembling_results.jpg">
   </div> 
   
 ## 7. Presentation of Insights/ Recommendation 
