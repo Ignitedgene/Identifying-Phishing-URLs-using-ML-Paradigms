@@ -60,7 +60,7 @@
  
   <b> - Decision Tree Diagram </b> 
   <div>
-    <img width="650" height="400" src="/dsai images/dt_tree.jpg">
+    <img width="700" height="400" src="/dsai images/dt_tree.jpg">
   </div> 
   
   <b> - Model Evaluations </b> 
