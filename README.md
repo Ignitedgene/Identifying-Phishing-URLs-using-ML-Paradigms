@@ -37,7 +37,8 @@
   <div> 
     <img width="800" height="350" src="/dsai images/pca.jpg">
   </div> 
-  
+ 
+ <h4> Naming of PCA Components </h4> 
   <p align='justify'> After running PCA, we analysed the breakdown of each PCA components and assigned names to them based on the input variables. We used this to construct our DecisionTree and better understand the PCA components, which will help with our subsequent analysis. </p>
   
   <div> 
@@ -66,7 +67,7 @@
  
   <b> - Decision Tree Diagram </b> 
   <div>
-    <img width="700" height="400" src="/dsai images/dt.jpg">
+    <img width="900" height="400" src="/dsai images/dt.jpg">
   </div> 
   
   <b> - Model Evaluations </b> 
