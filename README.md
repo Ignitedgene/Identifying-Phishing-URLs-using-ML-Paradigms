@@ -38,6 +38,12 @@
     <img width="800" height="350" src="/dsai images/pca.jpg">
   </div> 
   
+  <p align='justify'> After running PCA, we analysed the breakdown of each PCA components and assigned names to them based on the input variables. We used this to construct our DecisionTree and better understand the PCA components, which will help with our subsequent analysis. </p>
+  
+  <div> 
+    <img width="800" height="350" src="/dsai images/breakdown.jpg">
+  </div>
+  
 ## 3. Machine Learning Model Training & Evaluation 
   <p> We decided to run the following ML models and evaluate their respective performances:
       <ul> 
@@ -60,7 +66,7 @@
  
   <b> - Decision Tree Diagram </b> 
   <div>
-    <img width="700" height="400" src="/dsai images/dt_tree.jpg">
+    <img width="700" height="400" src="/dsai images/dt.jpg">
   </div> 
   
   <b> - Model Evaluations </b> 
@@ -114,7 +120,7 @@
   <b> - Exploratory Data Analysis for Feature Importance </b> 
     <ul> 
       <li> Analysing the chart for Feature Importance, we conducted EDA on the top 10 variables (Highest Influence on target variable). </li>
-      <li> Features like web_traffic & ratioexthyperlinks do not have a distinct difference to effectively identify phishing URLs, therefore we exclude them from our model inputs. </li>
+      <li> Features like web_traffic & ratio_hyperlinks (int/ ext) do not have a distinct difference to effectively identify phishing URLs, therefore we exclude them from our model inputs. </li>
     </ul> 
   
   <b> - Violin plots of top 10 variables </b>
@@ -188,6 +194,7 @@
         <li> Zero or low page rank </li> 
         <li> Relatively new domain_age </li> 
         <li> Presence of phish hints </li> 
+        <li> Long URLs with lengthy word path </li>
       </ol> 
   <div>
     <img width="700" height=400" src="/dsai images/violin_plot.jpg">
@@ -201,9 +208,10 @@
     <li> Ensembling of different models to obtain the aggregated result to improve model performance. </li>   
    </ul>
    
-<h2> THANK YOU! </h2>
+### THANK YOU!
 
 ## References: 
 <ol> 
+  <li> Web page Phishing Detection Dataset, https://www.kaggle.com/shashwatwork/web-page-phishing-detection-dataset?select=dataset_phishing.csv </li>
   <li> Phishing scams in Singapore rose to 5,020 cases in 2021 from 16 in 2017, https://sg.news.yahoo.com/phishing-scams-singapore-5020-cases-2021-from-16-in-2017-desmond-tan-084615863.html </li>
 </ol>
