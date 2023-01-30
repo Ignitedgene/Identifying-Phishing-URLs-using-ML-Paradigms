@@ -1,4 +1,4 @@
-# SC1015-Mini-Project
+# Identifying Phishing URLs using Machine Learning
 <h2> Introduction </h2> 
   <p align='justify'> Hi Everyone! This is a mini-project for our SC1015 Introduction to Data Science and Machine Learning module at NTU. Our team consists of Eugene Wee, Clare Yeo and Guo Zhiqi. For this project, our team identified the rising trend of phishing attacks and we sought to create a machine learning model to effectively identify which URLs are phishing in nature. We tested out different machine learning models, evaluated them based on classification accuracy, and tried to improve each model's performance.
   </p> 
